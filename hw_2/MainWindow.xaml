@@ -1,0 +1,52 @@
+﻿<Window x:Class="WpfApp8.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp8"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2"
+                   Text="Word Search" FontSize="18" FontWeight="Bold"
+                   HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+        <TextBlock Grid.Row="1" Grid.ColumnSpan="2"
+                   Text="Word:" Margin="0,5"/>
+        <TextBox Grid.Row="2" Grid.ColumnSpan="2"
+                 x:Name="txtSearchWord" Height="25" Margin="0,5"/>
+
+        <TextBlock Grid.Row="3" Grid.ColumnSpan="2"
+                   Text="File:" Margin="0,10,0,5"/>
+        <TextBox Grid.Row="4" Grid.Column="0"
+                 x:Name="txtFilePath" Height="25" Margin="0,5,5,5"/>
+        <Button Grid.Row="4" Grid.Column="1"
+                x:Name="btnBrowse" Content="Browse" Width="70" Height="25"
+                Margin="0,5" Click="BtnBrowse_Click"/>
+
+        <Button Grid.Row="5" Grid.ColumnSpan="2"
+                x:Name="btnSearch" Content="Search" Width="80" Height="30"
+                HorizontalAlignment="Center" VerticalAlignment="Top"
+                Margin="0,20,0,10" Click="BtnSearch_Click"/>
+
+        <TextBox Grid.Row="5" Grid.ColumnSpan="2"
+                 x:Name="txtResults" IsReadOnly="True"
+                 TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"
+                 Text="Enter word and select file, then click Search"
+                 Margin="0,70,0,0" TextChanged="txtResults_TextChanged"/>
+
+    </Grid>
+</Window>
